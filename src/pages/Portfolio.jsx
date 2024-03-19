@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-//import lu from "../Assests/lu.png"
+import lu from "../Assests/lu.png"
+import lulu from "../Assests/lulu pic.jpeg"
+import profile from "../Assests/profile.jpeg"
 const Portfolio = () => {
   const [activeFilter, setActiveFilter] = useState("*");
 
@@ -12,19 +14,37 @@ const Portfolio = () => {
       id: 1,
       category: "filter-1",
       title: "eCommerce Website",
-      image:'',
+      image: lulu,
     },
     {
       id: 2,
       category: "filter-2",
       title: "Product Landing Page",
-      image: "Assests/lulu pic.jpeg",
+      image: profile,
     },
     {
       id: 3,
       category: "filter-3",
       title: "JavaScript quiz game",
-      image: "Assests/profile.jpeg",
+      image: lulu,
+    },
+    {
+      id: 4,
+      category: "filter-3",
+      title: "JavaScript quiz game",
+      image: lulu,
+    },
+    {
+      id: 5,
+      category: "filter-3",
+      title: "JavaScript quiz game",
+      image: lulu,
+    },
+    {
+      id: 6,
+      category: "filter-3",
+      title: "JavaScript quiz game",
+      image: lulu,
     },
     // Add more items as needed
   ];
@@ -44,7 +64,7 @@ const Portfolio = () => {
           <p>My Portfolio</p>
           <h2 className="text-2xl font-bold">My Excellent Portfolio</h2>
         </div>
-        <div className="row">
+        <div className="row ">
           <div className="col-12">
             <ul id="portfolio-filter" className="flex justify-center">
               <li
@@ -91,22 +111,22 @@ const Portfolio = () => {
             </ul>
           </div>
         </div>
-        <div className="row portfolio-container ">
-          {/**flex flex-wrap gap-6 justify-center */}
+        {/**calling the main portfolio */}
+        <div className="row portfolio-container flex flex-wrap gap-10 justify-center">
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className={`col-lg-4 col-md-6 col-sm-12 portfolio-item ${item.category} wow fadeInUp`}
+              className={`col-lg-4 col-md-6 col-sm-12 portfolio-item ${item.category} wow fadeInUp flex-none w-full md:w-1/4 `}
               data-wow-delay="0.0s"
             >
-              <div className="portfolio-wrap ">
-                <div className="portfolio-img">
+              <div className="portfolio-wrap relative">
+                <div className="portfolio-img w-full h-auto">
                   <img src={item.image} alt={item.title} />
                 </div>
-                <div className="portfolio-text mt-2">
+                <div className="portfolio-text absolute -bottom-5 left-1/2 transform -translate-x-1/2 bg-white shadow-lg text-black p-2 text-center flex gap-10 w-64 max-w-xl mx-auto">
                   <h3>{item.title}</h3>
                   <a
-                    className="btn border border-gray-300  py-2 px-4 mt-2 inline-block"
+                    className="btn border border-red-500 text-red-500 py-2 px-4 mt-2 inline-block"
                     href={item.image}
                     data-lightbox="portfolio"
                   >
